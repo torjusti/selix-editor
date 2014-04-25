@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="dist/css/main.css">
+  </head>
+  <body>
+    <div id="editor-container">
+      <div id="editor-header">
+        <span id="editor-bold" class="editor-button" unselectable="on" data-editor="wrap,[b],[/b]">B</span>
+        <span id="editor-italics" class="editor-button" unselectable="on" data-editor="wrap,[i],[/i]">I</span>
+        <span id="editor-underline" class="editor-button" unselectable="on" data-editor="wrap,[u],[/u]">U</span>
+        <span id="editor-quote" class="editor-button" unselectable="on" data-editor="wrap,[quote],[/quote]">Quote</span>
+        <span id="editor-code" class="editor-button" unselectable="on" data-editor="wrap,[code],[/code]">Code</span>
+        <span id="editor-color" class="editor-button" unselectable="on" data-editor="color">Color</span>
+        <span id="editor-link" class="editor-button" unselectable="on" data-editor="link">Link</span>
+        <span id="editor-smiley" class="editor-button" unselectable="on" data-editor="smiley">Smiley</span>
+        <span id="editor-image" class="editor-button" unselectable="on" data-editor="image">Image</span>
+      </div>
+      <textarea id="editor-main"></textarea>
+      <div id="editor-overlay">
+        <div id="editor-overlay-main">
+          <div id="editor-picker">
+            <div id="editor-picker-main"></div>
+            <div id="editor-picker-controls">
+              <input type="text" id="editor-picker-value">
+              <span id="editor-picker-add">Add</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="editor-popup">
+        <div id="editor-popup-color">
+          <input type="text" id="editor-popup-color-choose" placeholder="#FFFFFF">
+          <span id="editor-popup-color-add" unselectable="on">Add color</span>
+          <a href="#" id="editor-popup-color-open">Open color picker</a>
+        </div>
+        <div id="editor-popup-link">
+          <input type="text" id="editor-popup-link-choose" placeholder="http://google.com">
+          <input type="text" id="editor-popup-link-text" placeholder="google">
+          <span id="editor-popup-link-add" unselectable="on">Add link</span>
+        </div>
+        <div id="editor-popup-smiley">
+          <span class="editor-smiley" data-editor=":)" unselectable="on">:)</span>
+          <span class="editor-smiley" data-editor=":(" unselectable="on">:(</span>
+        </div>
+        <div id="editor-popup-image">
+          <input type="text" id="editor-popup-image-choose" placeholder="http://image-host.com/image.png">
+          <span id="editor-popup-image-add" unselectable="on">Add</span>
+        </div>
+      </div>
+    </div>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="dist/scripts/main.min.js"></script>
+  </body>
+</html>

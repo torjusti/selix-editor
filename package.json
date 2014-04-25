@@ -1,0 +1,12 @@
+{
+  "name": "selix-editor",
+  "devDependencies": {
+    "gulp-ruby-sass": "~0.4.3",
+    "gulp": "~3.6.2",
+    "gulp-uglify": "~0.2.1",
+    "gulp-browserify": "~0.5.0",
+    "gulp-rename": "~1.2.0",
+    "selix": "~1.0.1",
+    "rainbowcolor": "~1.0.0"
+  }
+}

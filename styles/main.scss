@@ -1,0 +1,179 @@
+@import "bourbon/bourbon";
+
+body {
+  margin: 0;
+  background: #FFFFFF;
+}
+
+#editor-container {
+  padding: 5px;
+  font-size: 16px;
+}
+
+#editor-main {
+  @include box-sizing(border-box);
+  background: #FFF;
+  border: 1px solid #EEE;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  width: 100%;
+  resize: none;
+  min-height: 200px;
+  margin: 0;
+  outline: none; // Prevent the outline of textareas in Chrome
+  padding: em(5);
+  font-size: em(13);
+  font-family: monospace;
+}
+
+#editor-header {
+  @include background-image(linear-gradient(to bottom, #F9F9F9, #EEEEEE));
+  padding: em(5);
+  border: 1px solid #CCC;
+  border-radius: 3px 3px 0 0;
+}
+
+.editor-button {
+  @include background-image(linear-gradient(to bottom, #FFFFFF, #FBFBFB));
+  border-radius: 2px;
+  padding-left: em(8);
+  padding-top: em(4);
+  padding-right: em(8);
+  padding-bottom: em(4);
+  margin-right: 5px;
+  display: inline-block;
+  border: 1px solid #EEE;
+  cursor: pointer; // Elements are span tags
+  font-family: Open Sans, Arial, sans-serif;
+  font-size: em(13);
+  color: #555;
+  @include transition(border-color 0.5s);
+}
+
+.editor-button:hover {
+  border-color: #80A7FF;
+}
+
+#editor-bold { font-weight: bold; }
+#editor-italics { font-style: italic; }
+#editor-underline { text-decoration: underline; }
+
+@include keyframes(scale) {
+  from {
+    @include transform(scale(0.5));
+  }
+
+  to {
+    @include transform(scale(1));
+  }
+}
+
+@include keyframes(fadeIn) {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.editor-overlay-animate {
+  @include animation(fadeIn 0.4s)
+}
+
+.editor-main-animate {
+  @include animation(fadeIn 0.4s, scale 0.4s)
+}
+
+#editor-overlay {
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+
+#editor-overlay-main {
+  position: fixed;
+  width: 75%;
+  z-index: 20;
+  background: #FFF;
+  padding: 1em;
+  border: em(10) solid rgba(0, 0, 0, 0.9);
+}
+
+#editor-picker img {
+  display: block;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+#editor-picker img:not(:first-child) {
+  margin-top: 1em;
+}
+
+.color-picker-position {
+  border-left: 1px solid #000;
+  z-index: 30;
+}
+
+#editor-picker-controls {
+  margin-top: 1em;
+}
+
+#editor-picker-add {
+  @include button; // Literally a lazy man button here!
+}
+
+@include keyframes(grow) {
+  from {
+    @include transform(scale(0));
+  }
+
+  to {
+    @include transform(scale(1));
+  }
+}
+
+.editor-popup-animate {
+  @include animation(grow 0.4s, fadeIn 0.4s)
+}
+
+#editor-popup {
+  display: none;
+  padding: em(5);
+  position: absolute;
+  background: #EEE;
+  border: 1px solid #CCC;
+}
+
+#editor-popup a {
+  text-decoration: none;
+}
+
+#editor-popup-color-add {
+  @include button;
+}
+
+#editor-popup-link-add {
+  @include button;
+}
+
+.editor-smiley {
+  @include button;
+}
+
+#editor-popup-image-add {
+  @include button;
+}
+
+#editor-popup div span, #editor-popup div a, #editor-popup div input, #editor-picker-add {
+  margin-left: em(5);
+  &:first-child {
+    margin-left: 0;
+  }
+}
